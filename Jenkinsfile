@@ -14,6 +14,14 @@ pipeline {
             }
         }
         
+        stage('Run Migrations') {
+            steps {
+                // Run migrations for all apps including the api app
+                sh 'docker run --rm django-example:${BUILD_NUMBER} python manage.py makemigrations api'
+                sh 'docker run --rm django-example:${BUILD_NUMBER} python manage.py migrate api'
+            }
+        }
+        
         stage('Run Tests') {
             steps {
                 sh 'docker run --rm django-example:${BUILD_NUMBER} python manage.py test'
