@@ -21,7 +21,7 @@ jenkins-local-init-django/
 - Git installed
 - GitHub account
 
-## Setting Up CI/CD with Jenkins Local Init
+## Setting Up CI/CD with Jenkins Local Init (alias jent)
 
 ### Step 1: Start Jenkins with Ngrok
 
